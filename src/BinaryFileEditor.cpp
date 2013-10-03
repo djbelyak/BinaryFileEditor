@@ -7,9 +7,17 @@
 //============================================================================
 
 #include <iostream>
+#include <fstream>
+
+
 using namespace std;
 
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	return 0;
+int main()
+{
+
+	ifstream input("BOOKINFO.DAT");
+	char first[64];
+	input >> first;
+	cout << first << endl;
+
 }
