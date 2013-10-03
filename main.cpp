@@ -1,32 +1,24 @@
 #include <iostream>
 
-#include "FileReader.h"
-#include "FileWriter.h"
+#include "Performer.h"
 
 using namespace std;
 
 int main()
 {
-    BinaryFileEditor::FileReader* fr = new BinaryFileEditor::FileReader();
-    BinaryFileEditor::FileWriter* fw = new BinaryFileEditor::FileWriter();
+    BinaryFileEditor::Performer* p = new BinaryFileEditor::Performer();
 
     string frn;
     frn.append("/home/djbelyak/a.out");
-    fr->setFileName(frn);
+    p->readFile(frn);
+    p->moveLeft();
+    p->moveRight();
     string fwn;
-    fwn.append("/home/djbelyak/b.out");
-    fw->setFileName(fwn);
-
-    if (fr->readFile() == 0) {
-        fw->setSize(fr->getSize());
-        fw->setBinary(fr->getBinary());
-        fw->writeFile();
-
-    }
+    fwn.append("/home/djbelyak/c.out");
+    p->writeFile(fwn);
 
 
-    delete fw;
-    delete fr;
+    delete p;
 
     return 0;
 }

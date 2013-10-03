@@ -12,7 +12,7 @@ using namespace std;
 
 namespace BinaryFileEditor
 {
-	class Performer;
+//	class Performer;
 	class FileWriter;
 }
 

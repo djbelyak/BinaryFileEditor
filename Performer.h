@@ -24,15 +24,18 @@ namespace BinaryFileEditor
 		private: unsigned char* binary;
 		BinaryFileEditor::FileReader* reader;
 		BinaryFileEditor::FileWriter* writer;
-		BinaryFileEditor::FileWriter* unnamed_FileWriter_;
+
+        public: Performer();
+
+        public: ~Performer();
 
 		public: int readFile(string fileName);
 
 		public: int writeFile(string fileName);
 
-		public: void moveLeft(bool bit);
+        public: void moveLeft(void);
 
-		public: void moveRight(bool bit);
+        public: void moveRight(void);
 
 		public: void mod2(unsigned char bits);
 
