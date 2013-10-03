@@ -1,20 +1,33 @@
 #include <iostream>
 
 #include "FileReader.h"
+#include "FileWriter.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!" << endl;
     BinaryFileEditor::FileReader* fr = new BinaryFileEditor::FileReader();
-    string filename;
-    filename.append("/home/djbelyak/1.py");
-    fr->setFileName(filename);
+    BinaryFileEditor::FileWriter* fw = new BinaryFileEditor::FileWriter();
+
+    string frn;
+    frn.append("/home/djbelyak/a.out");
+    fr->setFileName(frn);
+    string fwn;
+    fwn.append("/home/djbelyak/b.out");
+    fw->setFileName(fwn);
+
     if (fr->readFile() == 0) {
-        for (int i=0; i<fr->getSize(); i++)
-            cout << fr->getBinary()[i];
+        fw->setSize(fr->getSize());
+        fw->setBinary(fr->getBinary());
+        fw->writeFile();
+
     }
+
+
+    delete fw;
+    delete fr;
+
     return 0;
 }
 

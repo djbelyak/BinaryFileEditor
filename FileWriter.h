@@ -1,6 +1,8 @@
 #include <string>
 #include <vector>
 #include <exception>
+#include <iostream>
+#include <fstream>
 using namespace std;
 
 #ifndef __FileWriter_h__
@@ -35,7 +37,7 @@ namespace BinaryFileEditor
 
         public: const long getSize();
 
-		public: void setBinary(unsigned char* binary);
+        public: void setBinary(const unsigned char* binary);
 	};
 }
 

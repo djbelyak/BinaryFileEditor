@@ -16,36 +16,34 @@ BinaryFileEditor::FileReader::~FileReader() {
 
 int BinaryFileEditor::FileReader::readFile() {
 	//Открываем файл для чтения в бинарном режиме
-    ifstream inputFile(this->getFileName().c_str());
+    ifstream inputFile(this->getFileName().c_str(), ios_base::binary);
 	//Если возникла ошибка
 	if (inputFile.fail()) {
 		//Сообщаем пользователю
         cerr << "Can't open file for reading!" << endl;
 		return 1;
 	}
-	//Объявляем буфер
-	unsigned char t;
-	//Читаем файл до конца
-	while(!inputFile.eof()) {
-		t = inputFile.get();
-		//для того, чтобы узнать размер
-		this->size++;
-	}
+    //Вычисляем длину файла
+    inputFile.seekg (0, inputFile.end);
+    this->size = inputFile.tellg();
+    inputFile.seekg (0, inputFile.beg);
 
 	//Выделяем память под массив
     try {
         this->binary = new unsigned char[this->getSize()];
     }
     catch (exception e) {
+        // При переполнении памяти ошибка пользователю
         cerr << "Out of memory!!!" << endl;
         return 2;
     }
 
-    //возвращаемся в начало файла
-    inputFile.seekg(0);
+    //Читаем файл полностью
     for (int i=0; i<this->getSize(); i++) {
         this->binary[i] = inputFile.get();
     }
+    //Закрываем фай полностью
+    inputFile.close();
 
 	return 0;
 }
