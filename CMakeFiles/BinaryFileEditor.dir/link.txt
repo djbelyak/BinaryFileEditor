@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/BinaryFileEditor.dir/Previewer.cpp.o CMakeFiles/BinaryFileEditor.dir/main.cpp.o CMakeFiles/BinaryFileEditor.dir/FileWriter.cpp.o CMakeFiles/BinaryFileEditor.dir/FileReader.cpp.o CMakeFiles/BinaryFileEditor.dir/Performer.cpp.o  -o BinaryFileEditor -rdynamic 

@@ -1,6 +1,8 @@
 #include <string>
 #include <vector>
 #include <exception>
+#include <stdio.h>
+#include <iostream>
 using namespace std;
 
 #ifndef __Previewer_h__
@@ -19,11 +21,13 @@ namespace BinaryFileEditor
 	class Previewer
 	{
 		private: long offset;
-		private: int systemBase;
 		private: int width;
 		private: int high;
-		private: string* menu;
-		BinaryFileEditor::Performer* preformer;
+        private: string menu;
+        public: BinaryFileEditor::Performer* preformer;
+
+        public: Previewer();
+        public: ~Previewer();
 
 		public: void show();
 
@@ -31,17 +35,21 @@ namespace BinaryFileEditor
 
 		public: void moveDown();
 
+        public: void moveLeft();
+
+        public: void moveRight();
+
 		public: void readFile();
 
 		public: void writeFile();
 
-		public: void setSystemBase(int systemBase);
+        public: void mod2();
 
 		public: void setWidth(int width);
 
 		public: void setHigh(int high);
 
-		public: void setMenu(string* menu);
+        public: void setMenu(string menu);
 	};
 }
 

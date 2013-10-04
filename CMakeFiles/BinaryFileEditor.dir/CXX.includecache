@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/djbelyak/workspace/BinaryFileEditor/Performer.h
+string
+-
+vector
+-
+exception
+-
+
+/home/djbelyak/workspace/BinaryFileEditor/Previewer.cpp
+string
+-
+vector
+-
+exception
+-
+Previewer.h
+/home/djbelyak/workspace/BinaryFileEditor/Previewer.h
+Performer.h
+/home/djbelyak/workspace/BinaryFileEditor/Performer.h
+
+/home/djbelyak/workspace/BinaryFileEditor/Previewer.h
+string
+-
+vector
+-
+exception
+-
+stdio.h
+-
+iostream
+-
+
+/home/djbelyak/workspace/BinaryFileEditor/main.cpp
+iostream
+-
+Previewer.h
+/home/djbelyak/workspace/BinaryFileEditor/Previewer.h
+
